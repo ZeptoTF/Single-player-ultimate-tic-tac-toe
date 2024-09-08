@@ -12,7 +12,7 @@ public class StrategiesDistributionFinder {
         float completion = 0;
         
         String strategy;
-        int[] strategiesDistribution = new int[50];
+        int[] strategiesDistribution = new int[64];
         
 
         for (File file : folderContents) {
@@ -37,7 +37,7 @@ public class StrategiesDistributionFinder {
             }
         }
         System.out.println("Number of strategies by length:");
-        for (int i=0; i<strategiesDistribution.length; i++) {
+        for (int i=27; i<strategiesDistribution.length; i++) {
             if (strategiesDistribution[i]!=0)
                 System.out.println(i+"\t"+strategiesDistribution[i]);
         }
