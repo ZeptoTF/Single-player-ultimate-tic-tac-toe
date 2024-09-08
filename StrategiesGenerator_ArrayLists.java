@@ -8,11 +8,11 @@ import java.time.Instant;
 public class StrategiesGenerator_ArrayLists {
     public static void main(String[] args) {
         try {
-            byte newBatch = 20;
-            int firstGroup = 62;
+            byte newBatch = 1;
+            int firstGroup = 1;
             int strategiesGroupSize = 2000000;
-            int groupsCap = 439;
-            int strategiesCounterForPrinting = 122000000 + 1;
+            int groupsCap = 500;
+            int strategiesCounterForPrinting = 0 + 1;
 
             FileWriter strategies = new FileWriter("Strategies_Batch_"+newBatch+"/Strategies_"+firstGroup+".txt");
             BufferedWriter strategiesWriter = new BufferedWriter(strategies);
@@ -24,7 +24,7 @@ public class StrategiesGenerator_ArrayLists {
             for (int i=0; i<writeBuffer.length; i++)
                 writeBuffer[i] = new StringBuilder();
             
-            String lastStrategy = "112132233435364457976947759687899866588";
+            String lastStrategy = "";
             for (char c : lastStrategy.toCharArray()) {
                 strategy.add((byte) (c - '0'));
             }
