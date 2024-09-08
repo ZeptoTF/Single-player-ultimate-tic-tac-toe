@@ -8,20 +8,23 @@ import java.time.Instant;
 public class StrategiesGenerator_ArrayLists {
     public static void main(String[] args) {
         try {
-            FileWriter strategies = new FileWriter("Strategies_Batch_1/Strategies_"+1+".txt");
+            byte newBatch = 20;
+            int firstGroup = 62;
+            int strategiesGroupSize = 2000000;
+            int groupsCap = 439;
+            int strategiesCounterForPrinting = 122000000 + 1;
+
+            FileWriter strategies = new FileWriter("Strategies_Batch_"+newBatch+"/Strategies_"+firstGroup+".txt");
             BufferedWriter strategiesWriter = new BufferedWriter(strategies);
 
             ArrayList<Byte> strategy = new ArrayList<Byte>(); //Raccoglie, in ordine, gli indici delle celle che formano una strategia vincente. Gli indici delle celle vanno da 1 a 9 partendo dall'angolo in alto a sinistra e prcedento in ordine di lettura
             int strategiesCounter = 0;
             int strategiesGroup = 0;
-            int strategiesGroupSize = 2000000;
-            int groupsCap = 500;
             StringBuilder[] writeBuffer = new StringBuilder[strategiesGroupSize];
             for (int i=0; i<writeBuffer.length; i++)
                 writeBuffer[i] = new StringBuilder();
-            int strategiesCounterForPrinting = 1;
             
-            String lastStrategy = "";
+            String lastStrategy = "112132233435364457976947759687899866588";
             for (char c : lastStrategy.toCharArray()) {
                 strategy.add((byte) (c - '0'));
             }
@@ -107,7 +110,7 @@ public class StrategiesGenerator_ArrayLists {
                                 System.out.print(Duration.between(start, end));
                                 System.exit(0);
                             }
-                            strategies = new FileWriter("Strategies_Batch_1/Strategies_"+(strategiesGroup+1)+".txt");
+                            strategies = new FileWriter("Strategies_Batch_"+newBatch+"/Strategies_"+(strategiesGroup+firstGroup)+".txt");
                             strategiesWriter = new BufferedWriter(strategies);
                         }
 
