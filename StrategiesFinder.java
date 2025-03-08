@@ -6,13 +6,14 @@ import java.util.ArrayList;
 
 public class StrategiesFinder {
     public static void main(String[] args) {
-        File folder = new File("Strategies_Batch_1");
+        
+        File folder = new File("Strategies_Batch_22");
         File[] folderContents = folder.listFiles();
         String[] fileContents;
         int lines;
         float completion = 0;
         
-        int targetStrategyLength = 31;
+        int targetStrategyLength = 30;
         String targetStrategy;
         ArrayList<String> targetStrategies = new ArrayList<String>();
         int numberOfTargetStrategies = 0;

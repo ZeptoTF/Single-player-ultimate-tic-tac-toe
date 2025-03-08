@@ -5,14 +5,15 @@ import java.util.Scanner;
 
 public class StrategiesDistributionFinder {
     public static void main(String[] args) {
-        File folder = new File("Strategies_Batch_1");
+        int newBatch = 24;
+        File folder = new File("Strategies_Batch_"+newBatch);
         File[] folderContents = folder.listFiles();
         String[] fileContents;
         int lines;
         float completion = 0;
         
         String strategy;
-        int[] strategiesDistribution = new int[64];
+        int[] strategiesDistribution = new int[37];
         
 
         for (File file : folderContents) {
@@ -24,7 +25,7 @@ public class StrategiesDistributionFinder {
                 for (int i=0; i<lines; i++) {
                     fileContents[i] = scanner.nextLine();
                     strategy = fileContents[i].substring(fileContents[i].lastIndexOf("\t") + 1).trim();
-                    strategiesDistribution[strategy.length()-1] += 1;
+                    strategiesDistribution[strategy.length()-28] += 1;
                 }
                 
                 completion++;
@@ -37,9 +38,9 @@ public class StrategiesDistributionFinder {
             }
         }
         System.out.println("Number of strategies by length:");
-        for (int i=27; i<strategiesDistribution.length; i++) {
+        for (int i=0; i<strategiesDistribution.length; i++) {
             if (strategiesDistribution[i]!=0)
-                System.out.println(i+"\t"+strategiesDistribution[i]);
+                System.out.println((i+27)+"\t"+strategiesDistribution[i]);
         }
     }
 }
